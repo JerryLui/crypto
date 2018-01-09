@@ -10,7 +10,7 @@ import concurrent.futures		# For concurrent downloads
 ## Notice: In this file I have used different methods to merge old data with new to try out different solutions
 
 ### COINMARKETCAP ###
-def update_market_cap(file = 'data/total_market_cap.csv', base_url = 'https://coinmarketcap.com/historical/'):
+def update_market_cap(file = '../data/total_market_cap.csv', base_url = 'https://coinmarketcap.com/historical/'):
 	'''
 	Downloads/updates market cap data from coinmarketcap's historical snapshots (which are taken at a 7 day interval) 
 	
@@ -80,7 +80,7 @@ def update_market_cap(file = 'data/total_market_cap.csv', base_url = 'https://co
 	print('\nTotal Market Cap data has been successfully updated to ' +
 		market_cap_df.index[-1].strftime('%d-%m-%Y') + '!\n')
 
-def update_coins(folder = 'price/', tail = '.csv'):
+def update_coins(folder = '../price/', tail = '.csv'):
 	'''
 	Updates and writes top 9 coins to folder 
 	
@@ -166,7 +166,7 @@ def update_coins(folder = 'price/', tail = '.csv'):
 	tail_url = '/historical-data/'
 
 	print('\nUpdating coins...')
-	def download_data(coin, folder='price/', tail='.csv'):
+	def download_data(coin, folder='../price/', tail='.csv'):
 		'''
 		Retrieves coin historical data upto today of the given coin from coinmarketcap and writes it to file.
 		
@@ -251,7 +251,7 @@ def update_blockchain_info():
 	TODO: Make more general with filenames and urls.
 	'''
 	
-	def update_file(filename, url, folder='data/'):
+	def update_file(filename, url, folder='../data/'):
 		'''
 		Updates given file with new data from blockchain.info.
 		
